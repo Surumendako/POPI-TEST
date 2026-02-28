@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST/テスト *問題確認*</title>
+  <link rel="stylesheet" href="test-ch.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#06bf0d">
+</head>
+
+  <div class="stage-badge" id="stageBadge"></div>
+
+
+  <div class="info-text">
+    ※ 前回プレイしたステージの問題が表示されます
+  </div>
+
+  <div class="word-wrap">
+    <div class="word-main" id="wordMain"></div>
+    <div class="word-sub" id="wordSub"></div>
+  </div>
+
+  <div class="nav-area">
+    <button class="nav-btn" id="prevBtn">◀</button>
+
+    <button class="nav-btn toggle-btn" id="toggleBtn">
+      間違えた単語を確認
+    </button>
+
+    <button class="nav-btn" id="nextBtn">▶</button>
+  </div>
+
+  <div class="back-area">
+    <a href="index.html" class="nav-btn back-btn">
+      戻る
+    </a>
+  </div>
+
+  <script src="test-ch.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker登録成功'))
+        .catch(err => console.log('Service Worker登録失敗', err));
+    }
+  </script>
+
+</body>
+</html>

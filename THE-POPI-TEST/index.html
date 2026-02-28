@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST/テスト</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#06bf0d">
+</head>
+
+<body>
+
+  <div class="gummy-rain" id="gummyRain"></div>
+
+  <h2 class="stage-title">ようこそ！ ステージを選択してください。</h2>
+
+  <div class="stage-list">
+    <button class="stage-btn" data-stage="1"><span class="stage-num">STAGE 1</span><span class="stage-desc">高校基礎</span></button>
+    <button class="stage-btn" data-stage="2"><span class="stage-num">STAGE 2</span><span class="stage-desc">高校頻出</span></button>
+    <button class="stage-btn" data-stage="3"><span class="stage-num">STAGE 3</span><span class="stage-desc">高校応用</span></button>
+    <button class="stage-btn" data-stage="4"><span class="stage-num">STAGE 4</span><span class="stage-desc">高校発展</span></button>
+    <button class="stage-btn" data-stage="5"><span class="stage-num">STAGE 5</span><span class="stage-desc">高校総合</span></button>
+    <button class="stage-btn" data-stage="6"><span class="stage-num">STAGE 6</span><span class="stage-desc">高校思考</span></button>
+    <button class="stage-btn" data-stage="7"><span class="stage-num">STAGE 7</span><span class="stage-desc">高校完成</span></button>
+    <button class="stage-btn" data-stage="8"><span class="stage-num">STAGE 8</span><span class="stage-desc">大学基礎</span></button>
+    <button class="stage-btn" data-stage="9"><span class="stage-num">STAGE 9</span><span class="stage-desc">大学頻出</span></button>
+    <button class="stage-btn" data-stage="10"><span class="stage-num">STAGE 10</span><span class="stage-desc">大学応用</span></button>
+    <button class="stage-btn" data-stage="11"><span class="stage-num">STAGE 11</span><span class="stage-desc">大学発展</span></button>
+    <button class="stage-btn" data-stage="12"><span class="stage-num">STAGE 12</span><span class="stage-desc">大学総合</span></button>
+    <button class="stage-btn" data-stage="13"><span class="stage-num">STAGE 13</span><span class="stage-desc">大学思考</span></button>
+    <button class="stage-btn" data-stage="14"><span class="stage-num">STAGE 14</span><span class="stage-desc">大学論理</span></button>
+    <button class="stage-btn" data-stage="15"><span class="stage-num">STAGE 15</span><span class="stage-desc">大学完成</span></button>
+  </div>
+
+  <button class="gummy-btn start-btn" id="startBtn">
+    <img src="pic/start.png" alt="スタート">
+  </button>
+
+  <a href="test-ch.html" class="gummy-btn start-btn">
+    <img src="pic/quemo-check.png" alt="出題確認">
+  </a>
+
+  <script src="index.js"></script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+</script>
+
+</body>
+</html>
+
