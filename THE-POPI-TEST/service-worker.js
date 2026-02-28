@@ -26,7 +26,6 @@ const urlsToCache = [
 '/TEST-POPI/THE-POPI-TEST/pic/poo.png',
 '/TEST-POPI/THE-POPI-TEST/pic/TEST-rogo.png',
 
-'/TEST-POPI/THE-POPI-TEST/pic/icon/TESTFIX.png',
 '/TEST-POPI/THE-POPI-TEST/pic/icon/TEST.png',
 
 '/TEST-POPI/THE-POPI-TEST/pic/key/a.png',
