@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  background: linear-gradient(180deg, #f7f7ff, #eef2ff);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px;
+  min-height: 100vh;
+}
+
+/* 上部バー */
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 480px;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  z-index: 200;
+  margin-bottom: 6px;
+}
+
+.top-bar img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.top-bar img:active {
+  transform: scale(0.9);
+}
+
+/* ロゴ */
+
+.top-image-wrapper {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 6px;
+}
+
+.top-image {
+  width: 100%;
+  height: clamp(70px, 18vw, 110px);
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* 問題エリア */
+
+.question {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+#jpWord {
+  font-size: clamp(20px, 6vw, 24px);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+#answerReveal {
+  font-size: 20px;
+  color: #ff4d4d;
+  margin-bottom: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#answerReveal.show {
+  opacity: 1;
+}
+
+#answer {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  background: #fff;
+  margin-bottom: 6px;
+}
+
+#assistBtn {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  background: #fff3b0;
+  box-shadow: 0 3px 0 #ffb300;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+#assistBtn:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+/* 進捗バー */
+
+.progress {
+  width: 100%;
+  max-width: 480px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #06bf0d, #7dff8c);
+  transition: width 0.3s;
+}
+
+/* キーボード */
+
+.keyboard {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.key-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.key-row img {
+  height: clamp(28px, 8.5vw, 34px);
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 0 #aaa;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.key-row img:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.keyboard img.assist-hide {
+  opacity: 0.25;
+  filter: grayscale(80%);
+}
+
+/* 判定画像 */
+
+#judge {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+#judge img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0;
+}
+
+#judge img.show {
+  animation: pop 0.6s forwards;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ステージ終了 */
+
+#stageEndArea {
+  display: none;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+#stageEndArea img {
+  width: clamp(70px, 18vw, 90px);
+  margin: 6px;
+}
+
+/* 結果リスト */
+
+.result-list {
+  max-height: 260px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  text-align: left;
+}
+
+.result-item {
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
