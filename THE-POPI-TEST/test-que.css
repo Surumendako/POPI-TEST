@@ -171,12 +171,12 @@ body > * { position: relative; z-index: 1; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
 }
 
 /* q〜p / a〜l の通常キー */
 .key-row img {
-  width: calc((100vw - 52px) / 10);
+  width: calc((100vw - 40px) / 10);
   aspect-ratio: 1;
   object-fit: contain;
   background: white;
@@ -190,7 +190,7 @@ body > * { position: relative; z-index: 1; }
 
 /* z〜- の行 */
 .key-row-letters img {
-  width: calc((100vw - 52px) / 10);
+  width: calc((100vw - 40px) / 10);
   aspect-ratio: 1;
   box-shadow: 0 4px 0 rgba(123,228,149,0.65);
 }
