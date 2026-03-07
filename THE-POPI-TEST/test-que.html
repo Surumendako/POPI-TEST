@@ -8,28 +8,21 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#06bf0d">
 </head>
-
 <body>
-
 <div class="gummy-rain"></div>
-
 <div class="top-bar">
   <img src="pic/retry.png" alt="やり直す" id="retryBtn">
   <img src="pic/stop.png" alt="やめる" id="quitBtn">
 </div>
-
 <div class="question">
   <div id="jpWord"></div>
   <div id="answerReveal"></div>
   <input id="answer" type="text" readonly>
 </div>
-
 <button id="assistBtn" onclick="useAssist()">ヒント</button>
-
 <div class="progress">
   <div id="progressBar"></div>
 </div>
-
 <div class="keyboard" id="keyboard">
   <div class="key-row">
     <img src="../THE-POPI-TEST/pic/key/q.png" onclick="add('q')">
@@ -43,7 +36,6 @@
     <img src="../THE-POPI-TEST/pic/key/o.png" onclick="add('o')">
     <img src="../THE-POPI-TEST/pic/key/p.png" onclick="add('p')">
   </div>
-
   <div class="key-row">
     <img src="../THE-POPI-TEST/pic/key/a.png" onclick="add('a')">
     <img src="../THE-POPI-TEST/pic/key/s.png" onclick="add('s')">
@@ -55,8 +47,7 @@
     <img src="../THE-POPI-TEST/pic/key/k.png" onclick="add('k')">
     <img src="../THE-POPI-TEST/pic/key/l.png" onclick="add('l')">
   </div>
-
-  <div class="key-row">
+  <div class="key-row key-row-letters">
     <img src="../THE-POPI-TEST/pic/key/z.png" onclick="add('z')">
     <img src="../THE-POPI-TEST/pic/key/x.png" onclick="add('x')">
     <img src="../THE-POPI-TEST/pic/key/c.png" onclick="add('c')">
@@ -65,33 +56,32 @@
     <img src="../THE-POPI-TEST/pic/key/n.png" onclick="add('n')">
     <img src="../THE-POPI-TEST/pic/key/m.png" onclick="add('m')">
     <img src="../THE-POPI-TEST/pic/key/-.png" onclick="add('-')">
+  </div>
+  <div class="key-row key-row-actions">
     <img src="../THE-POPI-TEST/pic/key/delete.png" onclick="del()">
     <img src="../THE-POPI-TEST/pic/key/ansewer.png" onclick="check()">
   </div>
 </div>
-
 <div class="next-area" id="stageEndArea">
   <img id="nextStageBtn" src="pic/next.png" alt="次へ">
   <a href="index.html">
     <img class="back-btn" src="pic/back.png" alt="戻る">
   </a>
 </div>
-
 <div id="judge">
   <img id="correct" src="pic/poo.png">
   <img id="wrong" src="pic/buu.png">
 </div>
-
-<script src="./test-quemo.js"></script>     
-<script src="./test-que.js"></script>     
-
+<script src="./test-quemo.js"></script>
+<script src="./test-que.js"></script>
 <script>
 const popiArea = document.getElementById("popiArea");
-popiArea.addEventListener("click", e => {
-  if (menu?.contains(e.target)) return;
-  popiArea.classList.toggle("open");
-});
+if (popiArea) {
+  popiArea.addEventListener("click", e => {
+    if (menu?.contains(e.target)) return;
+    popiArea.classList.toggle("open");
+  });
+}
 </script>
-
 </body>
 </html>
